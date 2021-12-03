@@ -3,7 +3,7 @@
 /**
  * Woocommerce functions and definitions
  *
- * @package Bootscore
+ * @package Sitehub
  */
 
 

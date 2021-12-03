@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Bootscore functions and definitions
+ * sitehub functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Bootscore
+ * @package Sitehub
  */
 
 
@@ -23,6 +23,7 @@ if (!function_exists('register_navwalker')) :
     register_nav_menu('footer-menu', 'Footer menu');
   }
 endif;
+
 add_action('after_setup_theme', 'register_navwalker');
 // Register Bootstrap 5 Nav Walker END
 
@@ -38,7 +39,7 @@ add_action('after_setup_theme', 'register_comment_list');
 // Register Comment List END
 
 
-if (!function_exists('bootscore_setup')) :
+if (!function_exists('sitehub_setup')) :
   /**
    * Sets up theme defaults and registers support for various WordPress features.
    *
@@ -46,14 +47,14 @@ if (!function_exists('bootscore_setup')) :
    * runs before the init hook. The init hook is too late for some features, such
    * as indicating support for post thumbnails.
    */
-  function bootscore_setup() {
+  function sitehub_setup() {
     /*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Bootscore, use a find and replace
-		 * to change 'bootscore' to the name of your theme in all the template files.
+		 * If you're building a theme based on sitehub, use a find and replace
+		 * to change 'sitehub' to the name of your theme in all the template files.
 		 */
-    load_theme_textdomain('bootscore', get_template_directory() . '/languages');
+    load_theme_textdomain('sitehub', get_template_directory() . '/languages');
 
     // Add default posts and comments RSS feed links to head.
     add_theme_support('automatic-feed-links');
@@ -88,7 +89,7 @@ if (!function_exists('bootscore_setup')) :
     add_theme_support('customize-selective-refresh-widgets');
   }
 endif;
-add_action('after_setup_theme', 'bootscore_setup');
+add_action('after_setup_theme', 'sitehub_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -97,13 +98,13 @@ add_action('after_setup_theme', 'bootscore_setup');
  *
  * @global int $content_width
  */
-function bootscore_content_width() {
+function sitehub_content_width() {
   // This variable is intended to be overruled from themes.
   // Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
   // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-  $GLOBALS['content_width'] = apply_filters('bootscore_content_width', 640);
+  $GLOBALS['content_width'] = apply_filters('sitehub_content_width', 640);
 }
-add_action('after_setup_theme', 'bootscore_content_width', 0);
+add_action('after_setup_theme', 'sitehub_content_width', 0);
 
 
 
@@ -115,15 +116,15 @@ add_action('after_setup_theme', 'bootscore_content_width', 0);
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 // Widgets
-if (!function_exists('bootscore_widgets_init')) :
+if (!function_exists('sitehub_widgets_init')) :
 
-  function bootscore_widgets_init() {
+  function sitehub_widgets_init() {
 
     // Top Nav
     register_sidebar(array(
-      'name' => esc_html__('Top Nav', 'bootscore'),
+      'name' => esc_html__('Top Nav', 'sitehub'),
       'id' => 'top-nav',
-      'description' => esc_html__('Add widgets here.', 'bootscore'),
+      'description' => esc_html__('Add widgets here.', 'sitehub'),
       'before_widget' => '<div class="ms-3">',
       'after_widget' => '</div>',
       'before_title' => '<div class="widget-title d-none">',
@@ -133,9 +134,9 @@ if (!function_exists('bootscore_widgets_init')) :
 
     // Top Nav Search
     register_sidebar(array(
-      'name' => esc_html__('Top Nav Search', 'bootscore'),
+      'name' => esc_html__('Top Nav Search', 'sitehub'),
       'id' => 'top-nav-search',
-      'description' => esc_html__('Add widgets here.', 'bootscore'),
+      'description' => esc_html__('Add widgets here.', 'sitehub'),
       'before_widget' => '<div class="top-nav-search">',
       'after_widget' => '</div>',
       'before_title' => '<div class="widget-title d-none">',
@@ -145,9 +146,9 @@ if (!function_exists('bootscore_widgets_init')) :
 
     // Sidebar
     register_sidebar(array(
-      'name'          => esc_html__('Sidebar', 'bootscore'),
+      'name'          => esc_html__('Sidebar', 'sitehub'),
       'id'            => 'sidebar-1',
-      'description'   => esc_html__('Add widgets here.', 'bootscore'),
+      'description'   => esc_html__('Add widgets here.', 'sitehub'),
       'before_widget' => '<section id="%1$s" class="widget %2$s card card-body mb-4 bg-light border-0">',
       'after_widget'  => '</section>',
       'before_title'  => '<h2 class="widget-title card-title border-bottom py-2">',
@@ -157,9 +158,9 @@ if (!function_exists('bootscore_widgets_init')) :
 
     // Top Footer
     register_sidebar(array(
-      'name' => esc_html__('Top Footer', 'bootscore'),
+      'name' => esc_html__('Top Footer', 'sitehub'),
       'id' => 'top-footer',
-      'description' => esc_html__('Add widgets here.', 'bootscore'),
+      'description' => esc_html__('Add widgets here.', 'sitehub'),
       'before_widget' => '<div class="footer_widget mb-5">',
       'after_widget' => '</div>',
       'before_title' => '<h2 class="widget-title">',
@@ -169,9 +170,9 @@ if (!function_exists('bootscore_widgets_init')) :
 
     // Footer 1
     register_sidebar(array(
-      'name' => esc_html__('Footer 1', 'bootscore'),
+      'name' => esc_html__('Footer 1', 'sitehub'),
       'id' => 'footer-1',
-      'description' => esc_html__('Add widgets here.', 'bootscore'),
+      'description' => esc_html__('Add widgets here.', 'sitehub'),
       'before_widget' => '<div class="footer_widget mb-4">',
       'after_widget' => '</div>',
       'before_title' => '<h2 class="widget-title h4">',
@@ -181,9 +182,9 @@ if (!function_exists('bootscore_widgets_init')) :
 
     // Footer 2
     register_sidebar(array(
-      'name' => esc_html__('Footer 2', 'bootscore'),
+      'name' => esc_html__('Footer 2', 'sitehub'),
       'id' => 'footer-2',
-      'description' => esc_html__('Add widgets here.', 'bootscore'),
+      'description' => esc_html__('Add widgets here.', 'sitehub'),
       'before_widget' => '<div class="footer_widget mb-4">',
       'after_widget' => '</div>',
       'before_title' => '<h2 class="widget-title h4">',
@@ -193,9 +194,9 @@ if (!function_exists('bootscore_widgets_init')) :
 
     // Footer 3
     register_sidebar(array(
-      'name' => esc_html__('Footer 3', 'bootscore'),
+      'name' => esc_html__('Footer 3', 'sitehub'),
       'id' => 'footer-3',
-      'description' => esc_html__('Add widgets here.', 'bootscore'),
+      'description' => esc_html__('Add widgets here.', 'sitehub'),
       'before_widget' => '<div class="footer_widget mb-4">',
       'after_widget' => '</div>',
       'before_title' => '<h2 class="widget-title h4">',
@@ -205,9 +206,9 @@ if (!function_exists('bootscore_widgets_init')) :
 
     // Footer 4
     register_sidebar(array(
-      'name' => esc_html__('Footer 4', 'bootscore'),
+      'name' => esc_html__('Footer 4', 'sitehub'),
       'id' => 'footer-4',
-      'description' => esc_html__('Add widgets here.', 'bootscore'),
+      'description' => esc_html__('Add widgets here.', 'sitehub'),
       'before_widget' => '<div class="footer_widget mb-4">',
       'after_widget' => '</div>',
       'before_title' => '<h2 class="widget-title h4">',
@@ -217,9 +218,9 @@ if (!function_exists('bootscore_widgets_init')) :
 
     // 404 Page
     register_sidebar(array(
-      'name' => esc_html__('404 Page', 'bootscore'),
+      'name' => esc_html__('404 Page', 'sitehub'),
       'id' => '404-page',
-      'description' => esc_html__('Add widgets here.', 'bootscore'),
+      'description' => esc_html__('Add widgets here.', 'sitehub'),
       'before_widget' => '<div class="mb-4">',
       'after_widget' => '</div>',
       'before_title' => '<h1 class="widget-title">',
@@ -228,7 +229,7 @@ if (!function_exists('bootscore_widgets_init')) :
     // 404 Page End
 
   }
-  add_action('widgets_init', 'bootscore_widgets_init');
+  add_action('widgets_init', 'sitehub_widgets_init');
 
 
 endif;
@@ -242,26 +243,26 @@ add_filter('widget_text', 'do_shortcode');
 
 
 //Enqueue scripts and styles
-function bootscore_scripts() {
+function sitehub_scripts() {
 
   // Get modification time. Enqueue files with modification date to prevent browser from loading cached scripts and styles when file content changes.
   $modificated_styleCss = date('YmdHi', filemtime(get_stylesheet_directory() . '/style.css'));
   if (file_exists(get_template_directory() . '/css/lib/bootstrap.min.css')) {
-    $modificated_bootscoreCss = date('YmdHi', filemtime(get_template_directory() . '/css/lib/bootstrap.min.css'));
+    $modificated_sitehubCss = date('YmdHi', filemtime(get_template_directory() . '/css/lib/bootstrap.min.css'));
   } else {
-    $modificated_bootscoreCss = 1;
+    $modificated_sitehubCss = 1;
   }
   $modificated_fontawesomeCss = date('YmdHi', filemtime(get_template_directory() . '/css/lib/fontawesome.min.css'));
   $modificated_bootstrapJs = date('YmdHi', filemtime(get_template_directory() . '/js/lib/bootstrap.bundle.min.js'));
   $modificated_themeJs = date('YmdHi', filemtime(get_template_directory() . '/js/theme.js'));
 
   // Style CSS
-  wp_enqueue_style('bootscore-style', get_stylesheet_uri(), array(), $modificated_styleCss);
+  wp_enqueue_style('sitehub-style', get_stylesheet_uri(), array(), $modificated_styleCss);
 
-  // bootScore
+  // sitehub
   require_once 'inc/scss-compiler.php';
-  bootscore_compile_scss();
-  wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/lib/bootstrap.min.css', array(), $modificated_bootscoreCss);
+  sitehub_compile_scss();
+  wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/lib/bootstrap.min.css', array(), $modificated_sitehubCss);
 
   // Fontawesome
   wp_enqueue_style('fontawesome', get_template_directory_uri() . '/css/lib/fontawesome.min.css', array(), $modificated_fontawesomeCss);
@@ -270,13 +271,13 @@ function bootscore_scripts() {
   wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/lib/bootstrap.bundle.min.js', array(), $modificated_bootstrapJs, true);
 
   // Theme JS
-  wp_enqueue_script('bootscore-script', get_template_directory_uri() . '/js/theme.js', array('jquery'), $modificated_themeJs, true);
+  wp_enqueue_script('sitehub-script', get_template_directory_uri() . '/js/theme.js', array('jquery'), $modificated_themeJs, true);
 
   if (is_singular() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
   }
 }
-add_action('wp_enqueue_scripts', 'bootscore_scripts');
+add_action('wp_enqueue_scripts', 'sitehub_scripts');
 //Enqueue scripts and styles END
 
 
@@ -326,9 +327,9 @@ endif;
 
 
 // Pagination Categories
-if (!function_exists('bootscore_pagination')) :
+if (!function_exists('sitehub_pagination')) :
 
-  function bootscore_pagination($pages = '', $range = 2) {
+  function sitehub_pagination($pages = '', $range = 2) {
     $showitems = ($range * 2) + 1;
     global $paged;
     if ($pages == '') {
@@ -413,25 +414,25 @@ endif;
 
 
 // Comment Button
-function bootscore_comment_form($args) {
+function sitehub_comment_form($args) {
   $args['class_submit'] = 'btn btn-outline-primary'; // since WP 4.1    
   return $args;
 }
-add_filter('comment_form_defaults', 'bootscore_comment_form');
+add_filter('comment_form_defaults', 'sitehub_comment_form');
 // Comment Button END
 
 
 // Password protected form
-function bootscore_pw_form() {
+function sitehub_pw_form() {
   $output = '
 		  <form action="' . get_option('siteurl') . '/wp-login.php?action=postpass" method="post" class="form-inline">' . "\n"
-    . '<input name="post_password" type="password" size="" class="form-control me-2 my-1" placeholder="' . __('Password', 'bootscore') . '"/>' . "\n"
-    . '<input type="submit" class="btn btn-outline-primary my-1" name="Submit" value="' . __('Submit', 'bootscore') . '" />' . "\n"
+    . '<input name="post_password" type="password" size="" class="form-control me-2 my-1" placeholder="' . __('Password', 'sitehub') . '"/>' . "\n"
+    . '<input type="submit" class="btn btn-outline-primary my-1" name="Submit" value="' . __('Submit', 'sitehub') . '" />' . "\n"
     . '</p>' . "\n"
     . '</form>' . "\n";
   return $output;
 }
-add_filter("the_password_form", "bootscore_pw_form");
+add_filter("the_password_form", "sitehub_pw_form");
 // Password protected form END
 
 

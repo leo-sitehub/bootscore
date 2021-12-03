@@ -1,0 +1,1 @@
+{"version":3,"file":"js/single.js","mappings":";;;;;AAAAA,OAAO,CAACC,GAAR,CAAa,cAAb,E","sources":["webpack://sitehub/./assets/src/js/single.js"],"sourcesContent":["console.log( 'Hello World!' );"],"names":["console","log"],"sourceRoot":""}

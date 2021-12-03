@@ -3,7 +3,7 @@
 /**
  * Functions to compile scss in the theme itself
  *
- * @package Bootscore
+ * @package Sitehub
  */
 
 require_once "scssphp/scss.inc.php";
